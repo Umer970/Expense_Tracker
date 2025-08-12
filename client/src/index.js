@@ -1,3 +1,10 @@
+require('dotenv').config();
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch(err => console.error("❌ MongoDB Connection Error:", err.message));
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
